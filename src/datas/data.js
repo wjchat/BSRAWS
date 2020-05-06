@@ -1,10 +1,10 @@
 import React from 'react';
 
-import cartier from '../images/cartier.jpg'
-import coach from '../images/coach.jpg'
-import laMer from '../images/laMer.jpg'
-import prada from '../images/prada.jpg'
-import reel from '../images/reel.jpg'
+import cartier from './cartier.jpg'
+import coach from './coach.jpg'
+import laMer from './laMer.jpg'
+import prada from './prada.jpg'
+import reel from './reel.jpg'
 
 let content  = [];
 
