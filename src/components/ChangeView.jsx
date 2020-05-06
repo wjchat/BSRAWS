@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react"
-import {gsap, Power2, CSSPlugin} from 'gsap/dist/gsap'
+import {gsap, Power2} from 'gsap'
 import duration from "./duration"
 import TransitionLink from "gatsby-plugin-transition-link"
-// Force CSSPlugin to not get dropped during build
-const C = CSSPlugin;
 
+import { CSSPlugin } from 'gsap/CSSPlugin'
+
+// Force CSSPlugin to not get dropped during build
+gsap.registerPlugin(CSSPlugin)
 
 const ChangeView = props => {
     let animate

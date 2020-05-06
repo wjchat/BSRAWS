@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react"
 import "../style/main.scss"
 import "../style/carousel.scss"
-import {gsap, Power2, CSSPlugin, Power4} from 'gsap/dist/gsap'
+import {gsap, Power2, Power4} from 'gsap'
 
 import data from "../datas/data.js"
 import arrow from '../images/arrow.svg'
@@ -15,10 +15,11 @@ import Viewing from './Viewing.jsx';
 import TransitionLink from 'gatsby-plugin-transition-link'
 
 import duration from './duration.js';
+
+import { CSSPlugin } from 'gsap/CSSPlugin'
+
 // Force CSSPlugin to not get dropped during build
-
-const C = CSSPlugin;
-
+gsap.registerPlugin(CSSPlugin)
 
 
 //not using these for now
