@@ -1,10 +1,8 @@
 import React,{useEffect, useCallback} from 'react';
-import {gsap, Power3} from 'gsap';
+import {gsap, Power3, CSSPlugin} from 'gsap/dist/gsap'
 import { TransitionPortal } from "gatsby-plugin-transition-link";
 import "../style/pageTransition.scss";
 // Force CSSPlugin to not get dropped during build
-import { CSSPlugin } from 'gsap/CSSPlugin'
-gsap.registerPlugin(CSSPlugin)
 const C = CSSPlugin;
 
 

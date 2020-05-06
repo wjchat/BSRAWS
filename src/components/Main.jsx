@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react"
 import "../style/main.scss"
 import "../style/carousel.scss"
-import {gsap, Power4, Power2} from 'gsap';
+import {gsap, Power2, CSSPlugin, Power4} from 'gsap/dist/gsap'
 
 import data from "../datas/data.js"
 import arrow from '../images/arrow.svg'
@@ -16,8 +16,7 @@ import TransitionLink from 'gatsby-plugin-transition-link'
 
 import duration from './duration.js';
 // Force CSSPlugin to not get dropped during build
-import { CSSPlugin } from 'gsap/CSSPlugin'
-gsap.registerPlugin(CSSPlugin)
+
 const C = CSSPlugin;
 
 
@@ -75,7 +74,7 @@ const BSR = props => {
     }, props.viewing)
     return(
         <div ref = {div=>animate=div} className="BSR">
-            <div><TransitionLink to = "/">BSR</TransitionLink></div>
+            <div><TransitionLink to = "/">BSSR</TransitionLink></div>
         </div>)
 }
 const Main = props => {

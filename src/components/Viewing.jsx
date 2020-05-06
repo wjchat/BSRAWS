@@ -1,10 +1,8 @@
 import React,{useEffect} from 'react';
-import {gsap, Power2} from 'gsap'
+import {gsap, Power2, CSSPlugin} from 'gsap/dist/gsap'
 import duration from './duration'
 import "../style/viewing.scss"
 // Force CSSPlugin to not get dropped during build
-import { CSSPlugin } from 'gsap/CSSPlugin'
-gsap.registerPlugin(CSSPlugin)
 const C = CSSPlugin;
 
 

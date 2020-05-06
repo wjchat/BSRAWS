@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react"
-import { gsap, Power2 } from "gsap"
+import {gsap, Power2, CSSPlugin} from 'gsap/dist/gsap'
 import duration from "./duration"
 import TransitionLink from "gatsby-plugin-transition-link"
 // Force CSSPlugin to not get dropped during build
-import { CSSPlugin } from 'gsap/CSSPlugin'
-gsap.registerPlugin(CSSPlugin)
 const C = CSSPlugin;
 
 

@@ -17,7 +17,6 @@ const Layout = ({ children }) => {
     <>
         <header><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet" />
 </header>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
             <Cursor />
             <main>{children}</main>
     </>
