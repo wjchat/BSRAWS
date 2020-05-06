@@ -1,9 +1,14 @@
 import React,{useState, useEffect,useCallback} from 'react';
-import {gsap, Power2, CSSPlugin,Power4} from 'gsap/dist/gsap'
+import {gsap, Power2,Power4} from 'gsap/all'
+import CSSPlugin from 'gsap/CSSPlugin';
+import CSSRulePlugin from 'gsap/CSSRulePlugin';
+
 import duration from './duration.js'
 // Force CSSPlugin to not get dropped during build
 const C = CSSPlugin;
-
+const CR = CSSRulePlugin;
+console.log("CSSRulePlugin", CSSRulePlugin);
+console.log("CSS Plugin", C);
 
  
 const ColorPalette = props =>{
