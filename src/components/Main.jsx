@@ -22,6 +22,8 @@ import { CSSPlugin } from 'gsap/CSSPlugin'
 gsap.registerPlugin(CSSPlugin)
 
 
+console.log("GSAP Globals", window.com.greensock);
+
 //not using these for now
 const Arrows = props =>{
     const handleClick = useCallback((direction)=>{
