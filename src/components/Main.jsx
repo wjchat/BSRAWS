@@ -74,7 +74,7 @@ const BSR = props => {
         }
     }, props.viewing)
     return(
-        <div ref = {div=>animate=div} className="BSSR">
+        <div ref = {div=>animate=div} className="BSR">
             <div><TransitionLink to = "/">BSR</TransitionLink></div>
         </div>)
 }

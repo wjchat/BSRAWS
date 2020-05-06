@@ -35,6 +35,7 @@ const ColorPalette = props =>{
     }
 
     useEffect(()=>{
+        console.log("props.hovering", props.hovering)
         let containers = main.getElementsByClassName("colorContainer");
                 for(let each of containers){ 
                     let canAnimate = true
