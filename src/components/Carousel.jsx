@@ -71,7 +71,7 @@ const Carousel = props => {
                 })
             }
         }
-    }, props.viewing)
+    }, [props.viewing])
     const updateClasses = () =>{
         if(props.hovering.index > props.current.index){
             slider.classList.add("next");
@@ -95,7 +95,7 @@ const Carousel = props => {
         }
     }
     return (
-        <div key = {isClient} className={props.className}>
+        <div className={props.className}>
             <div ref={div=>slider=div} className="slider"
                 onMouseMove = {()=>updateClasses()}
                >
