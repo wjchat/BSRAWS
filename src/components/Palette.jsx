@@ -22,10 +22,10 @@ const ColorPalette = props =>{
             height: percent,
             ease: Power2.easeIn,
         }, .05 * direction)
-        console.log(container)
 
     }    
     const animateDown = (container, direction, percent, time)=>{
+        gsap.registerPlugin(CSSPlugin)
         let tl = gsap.timeline();
         let colors = container.childNodes
         tl.staggerTo(colors, time,{
@@ -35,14 +35,12 @@ const ColorPalette = props =>{
     }
 
     useEffect(()=>{
-        console.log("props.hovering", props.hovering)
         let containers = main.getElementsByClassName("colorContainer");
                 for(let each of containers){ 
                     let canAnimate = true
                         if(parseInt(each.getAttribute("index")) != props.current.index){ //affects all except the one at 100% height
                             if(parseInt(each.getAttribute('index')) === props.hovering.index){
                                    if(parseInt(each.getAttribute("index")) > previousHover.index){
-                                       console.log("container to animate", each)
                                        animateUp(each, 1, "50%", duration * .25) //moving up with hover
                                    } else if(props.hovering != props.current){
                                        animateUp(each, -1, "50%", duration * .25) //moving down with hover
@@ -59,7 +57,7 @@ const ColorPalette = props =>{
                                }
                         }
     }
-    }, [props.hovering])
+    }, props.hovering)
     
     useEffect(()=>{
         let colorContainers = main.getElementsByClassName("colorContainer");

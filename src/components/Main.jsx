@@ -30,14 +30,12 @@ const Arrows = props =>{
                 let next = props.content[props.current.index - 1]
                 props.onClick(next)
             }else{
-                console.log('no room down')
             } 
         }else if(direction === "up"){
             if(props.current.index < props.content.length - 1){
                 let next = props.content[props.current.index + 1]
                 props.onClick(next)
             }else{
-                console.log('no room up')
             }
         }
     })
@@ -79,16 +77,20 @@ const BSR = props => {
         </div>)
 }
 const Main = props => {
+    const [isClient, updateClient] = useState(false);
     const [content, updateData] = useState(data)
     const [current, updateCurrent] = useState(content[0]);
     const[currentHover, updateHovering] = useState(current);
     const [viewing, updateViewing] = useState("carousel");
     useEffect(()=>{
         gsap.registerPlugin(CSSPlugin)
-        console.log(currentHover)
+        console.log(current)
     }, [currentHover])
+    useEffect(()=>{
+        updateClient(true);
+    }, [])
     return (
-        <div className={props.className}>
+        <div key = {isClient} className={props.className}>
             <BSR
             viewing = {viewing} 
             />

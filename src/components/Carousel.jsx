@@ -11,7 +11,9 @@ gsap.registerPlugin(CSSPlugin)
 
 const Carousel = props => {
     let slider;
+    const [isClient, updateClient] = useState(false);
     useEffect(()=>{
+        updateClient(true);
         let moveX = `${(-50 * (props.current.index) + 25)}vw`;
         gsap.to(slider, duration,{
             x: moveX,
@@ -19,6 +21,7 @@ const Carousel = props => {
         })
     }, props.current)
     useEffect(()=>{
+        gsap.registerPlugin(CSSPlugin)
         if(props.viewing != "carousel"){
             gsap.to(slider, .003,{
                 pointerEvents: "none",
@@ -90,7 +93,7 @@ const Carousel = props => {
         }
     }
     return (
-        <div className={props.className}>
+        <div key = {isClient} className={props.className}>
             <div ref={div=>slider=div} className="slider"
                 onMouseMove = {()=>updateClasses()}
                >
