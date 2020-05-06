@@ -8,23 +8,25 @@
 import React from "react"
 import PropTypes from "prop-types"
 import PageTransition from "./pageTransition.jsx"
-import Cursor from "./Cursor.jsx"
 
 import "./layout.css"
 
-const Layout = ({ children }) => {
-  return (
-    <>
+
+class Layout extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { isClient: false }
+  }
+  render() {
+    return <React.Fragment key={this.state.isClient}> 
         <header><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet" />
 </header>
-            <Cursor />
-            <main>{children}</main>
-    </>
-  )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+        <main>{this.props.children}</main>
+    </React.Fragment>
+  }
+  componentDidMount() {
+    this.setState({ isClient: true })
+  }
 }
 
 export default Layout

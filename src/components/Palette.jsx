@@ -59,7 +59,7 @@ const ColorPalette = props =>{
                                }
                         }
     }
-    }, props.hovering)
+    }, [props.hovering])
     
     useEffect(()=>{
         let colorContainers = main.getElementsByClassName("colorContainer");
