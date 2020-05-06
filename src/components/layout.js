@@ -8,7 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import PageTransition from "./pageTransition.jsx"
-import Cursor from "./cursor.jsx"
+import Cursor from "./Cursor.jsx"
 
 import "./layout.css"
 
