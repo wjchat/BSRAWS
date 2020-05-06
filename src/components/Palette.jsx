@@ -15,12 +15,15 @@ const ColorPalette = props =>{
     const [previousHover, updatePreviousHover] = useState(props.hovering)
     
     const animateUp= (container, direction, percent, time)=>{
+        gsap.registerPlugin(CSSPlugin)
         let tl = gsap.timeline();
         let colors = container.childNodes
         tl.staggerTo(colors, time,{
             height: percent,
             ease: Power2.easeIn,
         }, .05 * direction)
+        console.log(container)
+
     }    
     const animateDown = (container, direction, percent, time)=>{
         let tl = gsap.timeline();

@@ -22,8 +22,6 @@ import { CSSPlugin } from 'gsap/CSSPlugin'
 gsap.registerPlugin(CSSPlugin)
 
 
-console.log("GSAP Globals", window.com.greensock);
-
 //not using these for now
 const Arrows = props =>{
     const handleClick = useCallback((direction)=>{
@@ -77,7 +75,7 @@ const BSR = props => {
     }, props.viewing)
     return(
         <div ref = {div=>animate=div} className="BSR">
-            <div><TransitionLink to = "/">BSSR</TransitionLink></div>
+            <div><TransitionLink to = "/">BSR</TransitionLink></div>
         </div>)
 }
 const Main = props => {
@@ -85,6 +83,10 @@ const Main = props => {
     const [current, updateCurrent] = useState(content[0]);
     const[currentHover, updateHovering] = useState(current);
     const [viewing, updateViewing] = useState("carousel");
+    useEffect(()=>{
+        gsap.registerPlugin(CSSPlugin)
+        console.log(currentHover)
+    }, [currentHover])
     return (
         <div className={props.className}>
             <BSR
