@@ -1,0 +1,30 @@
+.carousel {
+    width: 100vw;
+    overflow: hidden;
+    cursor: url(../images/arrow.svg);
+    .slider {
+        height: 100%;
+        width: fit-content;
+        display: flex;
+        transform: translateX(25vw);
+        &>div{ 
+            display: inline-block;
+            position: relative;
+            width: 50vw;
+        }
+        img{
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+    }
+    .next{
+        cursor: url(../images/next.png), auto;
+    }    
+    .back{
+        cursor: url(../images/back.png), auto;
+    }    
+    .current{
+        cursor: url(../images/expand.png), auto;
+    }
+}

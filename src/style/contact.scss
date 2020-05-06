@@ -1,0 +1,24 @@
+@import 'global';
+
+.header{
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    &>div{
+        padding: 3vw;
+        @include subHeader;
+    }
+}
+.info{
+    margin-top: 20vh;
+    height: 80vh;
+    width: 100%;
+    text-align: center;
+    @include body;
+}
+.containContact{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}

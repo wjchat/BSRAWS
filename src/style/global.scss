@@ -1,0 +1,25 @@
+body {
+    -ms-overflow-style: none;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+
+$sans: "Montserrat", sans-serif;
+$subHeader: 2.5vw;
+$headerSize: 8vw;
+
+@mixin subHeader {
+    font-family: $sans;
+    color: white;
+    font-size: $subHeader;
+    letter-spacing: $subHeader / 20;
+    line-height: $subHeader;
+}
+@mixin body {
+    font-family: $sans;
+    color: white;
+    font-size: $subHeader / 2;
+    letter-spacing: $subHeader / 20;
+    line-height: $subHeader;
+}

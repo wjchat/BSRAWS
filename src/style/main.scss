@@ -1,0 +1,130 @@
+@import "global";
+
+$rowSpace: 20%;
+$columnSpace: 15%;
+$padding: 3vw;
+//main layout of items & projectItems
+.main{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: $rowSpace auto $rowSpace;
+    grid-template-columns: $columnSpace auto $columnSpace;
+    grid-template-areas: 
+        "BSR . gridView"
+        "carousel carousel carousel"
+        "projectCount colorPalette arrows";
+    @include subHeader;
+    
+    & > div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    //define grid positions
+    .BSR{
+        grid-area: BSR;
+        padding-left: $padding;
+        padding-top: $padding;
+        justify-content: flex-start;
+    }
+    .gridView{
+        grid-area: gridView;
+        text-align: right;
+        padding-right: $padding;
+        padding-top: $padding;
+        justify-content: flex-start;
+        &>div{
+            cursor: pointer;
+        }
+    }
+    .carousel{
+        grid-area: carousel;
+    }
+    .viewing{
+        grid-area: carousel;
+    }
+    .projectName{
+        grid-row: 2;
+        grid-column: 2;
+        z-index: 3;
+        display: flex;
+        justify-content: center;
+        padding-left: 5vw;
+        padding-top: 36vh;
+        pointer-events: none;
+        h1{
+            width: fit-content;
+            font-size: $headerSize;
+            line-height: $headerSize;
+            padding: 0;
+        }
+    }
+    .colorPalette{
+        grid-area: colorPalette;
+    }
+//    .projectCount{
+//        grid-area:  projectCount;
+//    }
+//    .arrows{
+//        grid-area: arrows;
+//    }
+    ///////
+}
+///
+
+//arrows
+.main{
+    .arrows{
+        div{
+            height: fit-content;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            height: $subHeader * 1.75;
+            img{
+                max-width: 40%;
+                max-height: 100%;
+                margin-bottom: 0;
+                box-sizing: border-box;
+                margin: $subHeader * .125;
+                cursor: pointer;
+            }
+            .left{
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+//
+
+//colorPalette
+.main{
+    .colorPalette{
+        .container{
+            height: 20%;
+            position: relative;
+            width: 90%;
+            margin: auto;
+            display: flex;
+        }
+        .border{
+            position: absolute;
+            width: 100%;
+            height: 10%;
+            background-color: white;
+            bottom: 0;
+        }
+        .colorContainer{
+            flex-grow: 1;
+            display: flex;
+            cursor: pointer;
+            .color{
+                flex-grow: 1;
+                height: 0%;
+                margin-top: auto;
+            }
+        }
+    }
+}
+//
