@@ -41,6 +41,7 @@ const ColorPalette = props =>{
                         if(parseInt(each.getAttribute("index")) != props.current.index){ //affects all except the one at 100% height
                             if(parseInt(each.getAttribute('index')) === props.hovering.index){
                                    if(parseInt(each.getAttribute("index")) > previousHover.index){
+                                       console.log("container to animate", each)
                                        animateUp(each, 1, "50%", duration * .25) //moving up with hover
                                    } else if(props.hovering != props.current){
                                        animateUp(each, -1, "50%", duration * .25) //moving down with hover
