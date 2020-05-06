@@ -84,7 +84,6 @@ const Main = props => {
     const [viewing, updateViewing] = useState("carousel");
     useEffect(()=>{
         gsap.registerPlugin(CSSPlugin)
-        console.log(current)
     }, [currentHover])
     useEffect(()=>{
         updateClient(true);

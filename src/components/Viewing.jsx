@@ -27,7 +27,7 @@ const Viewing = props =>{
                 ease: Power2.easeIn,
             }, duration / 4)
         } 
-    }, props.viewing)
+    }, [props.viewing])
 return(<div ref ={div=>animate=div} className = "viewing">
    <div className = "vid1">
     <iframe src={props.viewing.video} frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>

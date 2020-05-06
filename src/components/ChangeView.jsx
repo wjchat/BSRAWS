@@ -68,7 +68,7 @@ const ChangeView = props => {
                 ease: Power2.easeOut
             })
         }
-    }, props.viewing)
+    }, [props.viewing])
     return (
         <div ref={div => (animate = div)} className={props.className}>
             {props.viewing != "carousel" ? (

@@ -57,7 +57,7 @@ const ColorPalette = props =>{
                                }
                         }
     }
-    }, props.hovering)
+    }, [props.hovering])
     
     useEffect(()=>{
         let colorContainers = main.getElementsByClassName("colorContainer");
@@ -77,7 +77,7 @@ const ColorPalette = props =>{
             }
         }
         updatePrevious(props.current) //so that we can compare order next time
-    }, props.current)
+    }, [props.current])
     
     useEffect(()=>{
         if(props.viewing != "carousel"){
@@ -95,7 +95,7 @@ const ColorPalette = props =>{
                 ease: Power2.easeOut
             })
         }
-    }, props.viewing)
+    }, [props.viewing])
     return(            
         <div ref={div=>main=div} className={props.className}>
                 <div className = "container">

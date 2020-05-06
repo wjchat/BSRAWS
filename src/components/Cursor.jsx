@@ -18,11 +18,12 @@ const Cursor = props => {
             props.updateMousePos({x: event.x, y: event.y})
         }, {passive: true})    
     }, [])
+    
     useEffect(()=>{
         if(props.mousePos.x != null){
             moveMouse(props.mousePos);
         }
-    }, props.mousePos)
+    }, [props.mousePos])
     return(
     <div ref = {div=>animate=div} className = "cursor">
         

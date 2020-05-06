@@ -19,7 +19,8 @@ const Carousel = props => {
             x: moveX,
             ease: Power4.easeInOut,
         })
-    }, props.current)
+    }, [props.current])
+    
     useEffect(()=>{
         gsap.registerPlugin(CSSPlugin)
         if(props.viewing != "carousel"){
@@ -27,6 +28,7 @@ const Carousel = props => {
                 pointerEvents: "none",
     
             })
+            
             for(let each of slider.getElementsByClassName("eachSlide")){
                 if(parseInt(each.getAttribute("index")) < props.current.index){
                     gsap.to(each, duration / 2,{

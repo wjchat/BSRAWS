@@ -56,7 +56,7 @@ const ProjectName = props =>{
         }else if(props.current.index < current.index){
             handleChange(props.current, "down")
         }
-    }, props.current)
+    }, [props.current])
     useEffect(()=>{
         if(props.viewing!="carousel"){
             gsap.to(animate, duration / 2,{
@@ -75,7 +75,7 @@ const ProjectName = props =>{
                 ease: Power2.easeOut,
             })
         }
-    }, props.viewing)
+    }, [props.viewing])
     return(<div ref = {div=>animate=div} className={props.className}>
         <h1>{current.name}</h1>
     </div>)
